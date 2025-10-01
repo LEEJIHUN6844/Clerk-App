@@ -6,15 +6,27 @@ interface RepoProps {
 }
 
 export default async function RepoDirs({ name }: RepoProps) {
-  const username = "bradtraversy";
+  const username = "LEEJIHUN6844";
+  const token = process.env.GITHUB_TOKEN;
   await new Promise((resolve) => setTimeout(resolve, 2000));
   const response = await fetch(
-    `https://api.github.com/repos/${username}/${name}/contents`
+    `https://api.github.com/repos/${username}/${name}/contents`,
+    {
+      headers: {
+        Authorization: `token ${token}`,
+      },
+    }
   );
+
+  if (!response.ok) {
+    return null;
+  }
+
   const contents: GitHubContent[] = await response.json();
   const dirs = contents.filter((content) => content.type === "dir");
+
   return (
-    <div className="mt-2 ">
+    <div className="mt-2">
       <h3 className="text-xl font-bold">Directories</h3>
       <ul>
         {dirs.map((dir) => (

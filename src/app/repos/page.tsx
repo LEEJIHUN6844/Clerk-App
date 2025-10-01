@@ -24,7 +24,7 @@ export default async function RepoPage() {
         {Array.isArray(repos) &&
           repos.map((repo: Repository) => (
             <li key={repo.id} className="bg-gray-100 m-4 p-4 rounded-md">
-              <Link href={`https://github.com/${username}/${repo.name}`}>
+              <Link href={`/repos/${repo.name}`}>
                 <h3 className="text-2xl text-black font-bold">{repo.name}</h3>
                 <p>{repo.description}</p>
                 <div className="flex justify-between items-center">
