@@ -5,9 +5,9 @@ import {
   SignedIn,
   UserButton,
   SignOutButton,
-} from '@clerk/nextjs'
-import Link from 'next/link'
-import React from 'react'
+} from "@clerk/nextjs";
+import Link from "next/link";
+import React from "react";
 
 export default function Header() {
   return (
@@ -29,8 +29,14 @@ export default function Header() {
               </div>
             </SignedOut>
             <SignedIn>
-            <Link href="/repos" className="text-gray-300 mr-4">
+              <Link href="/repos" className="text-gray-300 mr-4">
                 Repos
+              </Link>
+              <Link
+                href="/courses"
+                className="text-gray-300 hover:text-white mr-4"
+              >
+                Courses
               </Link>
               <Link href="/dashboard" className="text-gray-300 mr-4">
                 Dashboard-S
@@ -49,5 +55,5 @@ export default function Header() {
         </div>
       </nav>
     </div>
-  )
+  );
 }

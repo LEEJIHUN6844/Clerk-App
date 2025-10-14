@@ -1,5 +1,5 @@
-import Repo from "@/app/components/Repo";
-import RepoDirs from "@/app/components/RepoDirs";
+import Repo from "@/components/Repo";
+import RepoDirs from "@/components/RepoDirs";
 import Link from "next/link";
 import React, { Suspense } from "react";
 export default function RepoPage({ params }: { params: { name: string } }) {
